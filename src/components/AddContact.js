@@ -1,56 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-class AddContact extends React.Component {
-  state = {
+const AddContact = (props) => {
+  const initialValues = {
     name: '',
     email: ''
   }
+  const [contact, setContact] = useState(initialValues)
   
-  add = (e) => {
+  const navigate = useNavigate()
+  const add = (e) => {
     e.preventDefault()
-    const navigate = useNavigate()
-    if (this.state.name === '' || this.state.email === '') {
+    if (contact.name === '' || contact.email === '') {
       alert('All fields are required!')
       return
     }
-    this.props.addContactHandler(this.state)
-    this.setState({
-      name: '',
-      email: ''
+    props.addContactHandler(contact)
+    setContact(initialValues)
+    navigate('/')
+  }
+
+  const handleNameChange = (e) => {
+    setContact(contact => {
+      return {...contact, name: e.target.value}
     })
   }
 
-  render() {
-    return (
-      <div className="addContact">
-        <h2>Add Contact</h2>
-        <form onSubmit={this.add}>
-          <div className="field">
-            <label>Name</label>
-            <input 
-              type="text" 
-              name="name" 
-              placeholder="Name"
-              value={this.state.name}
-              onChange={(e) => this.setState({ name: e.target.value })}
-            />
-          </div>
-          <div className="field">
-            <label>Email</label>
-            <input 
-              type="text"
-              name="email" 
-              placeholder="Email"
-              value={this.state.email}
-              onChange={(e) => this.setState({ email: e.target.value })}
-            />
-          </div>
-          <button className="btn">Add</button>
-        </form>
-      </div>
-    )
+  const handleEmailChange = (e) => {
+    setContact(contact => {
+      return {...contact, email: e.target.value}
+    })
   }
+
+  return (
+    <div className="addContact">
+      <h2>Add Contact</h2>
+      <form onSubmit={add}>
+        <div className="field">
+          <label>Name</label>
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="Name"
+            value={contact.name}
+            onChange={handleNameChange}
+          />
+        </div>
+        <div className="field">
+          <label>Email</label>
+          <input 
+            type="text"
+            name="email" 
+            placeholder="Email"
+            value={contact.email}
+            onChange={handleEmailChange}
+          />
+        </div>
+        <button className="btn">Add</button>
+      </form>
+    </div>
+  )
 }
 
 export default AddContact;
-
