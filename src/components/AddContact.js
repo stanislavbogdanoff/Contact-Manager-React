@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom'
 
 class AddContact extends React.Component {
   state = {
@@ -19,7 +18,6 @@ class AddContact extends React.Component {
       name: '',
       email: ''
     })
-    navigate('/')
   }
 
   render() {
