@@ -12,12 +12,13 @@ const ContactCard = (props) => {
           <p>{email}</p>
         </Link>
       </div>
-      <i 
-        className="fa fa-trash fa-2x" 
-        aria-hidden="true"
-        onClick={() => props.clickHandler(id)}
-      >
-      </i>
+      <Link to={`/contact/delete/${id}`} state={{contact: props.contact}} className="link">
+        <i 
+          className="fa fa-trash fa-2x" 
+          aria-hidden="true"
+        >
+        </i>
+      </Link>
     </div>
   )
 }

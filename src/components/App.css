@@ -9,7 +9,7 @@ body {
   line-height: normal;
   font-family: 'Libre Franklin', sans-serif;
   color: rgb(53, 53, 53);
-  background: rgb(201, 253, 236);
+  background: rgb(220, 255, 240);
 }
 .app {
   padding: 0 25%;
@@ -127,4 +127,40 @@ i:hover {
   justify-content: center;
   text-decoration: none;
   border: none;
+}
+.contact-delete {
+  height: fit-content;
+  width: fit-content;
+  margin: 10rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 2px solid rgb(53, 53, 53);
+}
+.contact-delete h2 {
+  color: rgb(88, 88, 88);
+  text-align: center;
+  line-height: 2.5rem;
+  width: 100%;
+}
+.contact-delete p {
+  font-size: 2rem;
+  color: #2d89c7;
+}
+.delete-btns {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.contact-delete .btn {
+  width: 7rem;
+}
+#btn-red {
+  background: linear-gradient(to bottom, hsl(23, 100%, 61%), hsl(9, 100%, 50%));
+}
+#btn-red:hover {
+  background: hsl(9, 100%, 50%);
+}
+#btn-red:active {
+  background: hsl(9, 100%, 44%);
 }

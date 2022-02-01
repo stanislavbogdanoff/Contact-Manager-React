@@ -6,9 +6,11 @@ const AddContact = (props) => {
     name: '',
     email: ''
   }
+
   const [contact, setContact] = useState(initialValues)
   
   const navigate = useNavigate()
+  
   const add = (e) => {
     e.preventDefault()
     if (contact.name === '' || contact.email === '') {
@@ -63,3 +65,4 @@ const AddContact = (props) => {
 }
 
 export default AddContact;
+

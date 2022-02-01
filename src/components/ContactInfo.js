@@ -6,6 +6,7 @@ import user from '../images/user.png'
 const ContactInfo = (props) => {
   const location = useLocation()
   const { name, email } = location.state.contact
+  
   return (
     <>
       <div className="contact-info">
