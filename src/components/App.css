@@ -9,7 +9,7 @@ body {
   line-height: normal;
   font-family: 'Libre Franklin', sans-serif;
   color: rgb(53, 53, 53);
-  background: rgb(172, 252, 225);
+  background: rgb(201, 253, 236);
 }
 .app {
   padding: 0 25%;
@@ -95,4 +95,36 @@ i {
 i:hover {
   color: hsl(9, 100%, 50%);
   cursor: pointer;
+}
+.link {
+  text-decoration: none;
+  color: rgb(65, 65, 65)
+}
+.link:hover {
+  color: rgb(49, 49, 49);
+}
+.contact-info {
+  width: 50%;
+  margin: 5rem auto 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 2px solid rgb(53, 53, 53);
+  overflow: hidden;
+}
+.info-content {
+  padding: 1rem 0;
+  text-align: center;
+}
+.info-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.btn.center {
+  width: fit-content;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
 }
